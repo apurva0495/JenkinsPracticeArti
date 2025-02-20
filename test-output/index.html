@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-JenkinsTest" class="navigator-link ">
-                    <span>C:\Eclipse\JenkinsPracticeArti\testng.xml</span>
+                    <span>C:\Eclipse\JenkinsPracticeArti\src\test\resources\testng.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -104,7 +104,7 @@
                     <div class="method-list-content passed suite-JenkinsTest">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-JenkinsTest" title="TestsPackage.RandomTest" class="method navigator-link" hash-for-method="test1">test1</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-JenkinsTest" title="Testing.RandomTest" class="method navigator-link" hash-for-method="testOne">testOne</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-JenkinsTest -->
@@ -122,14 +122,14 @@
           <div class="suite-JenkinsTest-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">TestsPackage.RandomTest</span>
+              <span class="class-name">Testing.RandomTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="test1">
-                  </a> <!-- test1 -->
-                  <span class="method-name">test1</span>
+                  <a name="testOne">
+                  </a> <!-- testOne -->
+                  <span class="method-name">testOne</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -137,7 +137,7 @@
         </div> <!-- panel JenkinsTest -->
         <div panel-name="test-xml-JenkinsTest" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Eclipse\JenkinsPracticeArti\testng.xml</span>
+            <span class="header-content">C:\Eclipse\JenkinsPracticeArti\src\test\resources\testng.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -146,7 +146,7 @@
 &lt;suite name=&quot;JenkinsTest&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test One&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;TestsPackage.RandomTest&quot;/&gt;
+      &lt;class name=&quot;Testing.RandomTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test One --&gt;
 &lt;/suite&gt; &lt;!-- JenkinsTest --&gt;
@@ -188,14 +188,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'test1')
-data.setCell(0, 2, 'TestsPackage.RandomTest')
-data.setCell(0, 3, 11);
+data.setCell(0, 1, 'testOne')
+data.setCell(0, 2, 'Testing.RandomTest')
+data.setCell(0, 3, 9);
 window.suiteTableData['JenkinsTest']= { tableData: data, tableDiv: 'times-div-JenkinsTest'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 11 ms</span>
+              <span class="suite-total-time">Total running time: 9 ms</span>
               <div id="times-div-JenkinsTest">
               </div> <!-- times-div-JenkinsTest -->
             </div> <!-- times-div -->
@@ -221,9 +221,9 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">TestsPackage.RandomTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">Testing.RandomTest</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">test1</span>
+                <span class="method-name">testOne</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->

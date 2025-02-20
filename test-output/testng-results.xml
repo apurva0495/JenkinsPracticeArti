@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-20T20:08:42 IST" name="JenkinsTest" finished-at="2025-02-20T20:08:42 IST" duration-ms="56">
+  <suite started-at="2025-02-20T21:52:10 IST" name="JenkinsTest" finished-at="2025-02-20T21:52:10 IST" duration-ms="46">
     <groups>
     </groups>
-    <test started-at="2025-02-20T20:08:42 IST" name="Test One" finished-at="2025-02-20T20:08:42 IST" duration-ms="56">
-      <class name="TestsPackage.RandomTest">
-        <test-method signature="test1()[pri:0, instance:TestsPackage.RandomTest@625732]" started-at="2025-02-20T20:08:42 IST" name="test1" finished-at="2025-02-20T20:08:42 IST" duration-ms="11" status="PASS">
+    <test started-at="2025-02-20T21:52:10 IST" name="Test One" finished-at="2025-02-20T21:52:10 IST" duration-ms="46">
+      <class name="Testing.RandomTest">
+        <test-method signature="testOne()[pri:0, instance:Testing.RandomTest@41e1e210]" started-at="2025-02-20T21:52:10 IST" name="testOne" finished-at="2025-02-20T21:52:10 IST" duration-ms="9" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test1 -->
-      </class> <!-- TestsPackage.RandomTest -->
+        </test-method> <!-- testOne -->
+      </class> <!-- Testing.RandomTest -->
     </test> <!-- Test One -->
   </suite> <!-- JenkinsTest -->
 </testng-results>

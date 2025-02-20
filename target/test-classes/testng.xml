@@ -2,7 +2,7 @@
 <suite name="JenkinsTest">
 	<test name="Test One">
 		<classes>
-			<class name="TestsPackage.RandomTest"></class>
+			<class name="Testing.RandomTest"></class>
 		</classes>
 	</test>
 </suite>
