@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="JenkinsTest">
+	<test name="Test One">
+		<classes>
+			<class name="TestsPackage.RandomTest"></class>
+		</classes>
+	</test>
+</suite>
