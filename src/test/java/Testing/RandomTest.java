@@ -9,5 +9,6 @@ public class RandomTest {
 	public void testOne() {
 		System.out.println("Test One");
 		System.out.println("Test two");
+		System.out.println("Test 3");
 	}
 }
