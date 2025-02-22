@@ -10,6 +10,6 @@ job('MyGeneratedJob') {
     }
 
     steps {
-        shell('echo "Hello, Jenkins! Running Job from DSL script"')
+        batchFile('echo "Hello, Jenkins! Running Job from DSL script"')
     }
 }
