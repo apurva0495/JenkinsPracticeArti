@@ -4,7 +4,11 @@ pipeline {
         stage('Build') {
             steps {
                 retry(3) {  // Retries the step up to 3 times if it fails
-                    bat 'I am not going to work :c'
+                    bat 'echo hello'
+                }
+
+                timeout(time: 3, unit: 'SECONDS'){
+                    sh 'sleep 5'
                 }
             }
         }
