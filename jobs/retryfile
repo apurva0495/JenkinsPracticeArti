@@ -3,17 +3,23 @@ pipeline {
     stages {
         stage('Compile') {
             steps {
-                bat 'mvn clean compile'
+                withMaven(maven: 'maven') {
+                    bat 'mvn clean compile'
+                }
             }
         }
 
         stage('Test') {
             steps {
-                catchError(buildResult: 'UNSTABLE') {  // Continue even if tests fail
-                    bat 'mvn test'
+                withMaven(maven: 'maven') {
+                    catchError(buildResult: 'UNSTABLE') {  // Continue even if tests fail
+                        bat 'mvn test'
+                    }
                 }
             }
         }
+
+       
     }
     
     post {
