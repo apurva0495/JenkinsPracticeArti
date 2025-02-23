@@ -1,15 +1,45 @@
 pipeline {
     agent any
-    environment {
-        NAME = 'AA'
-        LASTNAME = 'AG'
-    }
-
     stages {
-        stage('Build') {
+        stage('Compile') {
             steps {
-                bat 'echo %NAME% %LASTNAME%'
+                withMaven(maven: 'maven') {
+                    bat 'mvn clean compile'
+                }
             }
+        }
+
+        stage('Test') {
+            steps {
+                withMaven(maven: 'maven') {
+                    catchError(buildResult: 'UNSTABLE') {  // Continue even if tests fail
+                        bat 'mvn test'
+                    }
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                withMaven(maven: 'maven') {
+                    bat 'mvn deploy'
+                }
+            }
+        }
+    }
+    
+    post {
+        always {
+            echo 'Pipeline execution completed!'
+        }
+        success {
+            echo 'Build was successful 🎉'
+        }
+        failure {
+            echo 'Build failed ❌'
+        }
+        unstable {
+            echo 'Some tests failed, but continuing... ⚠️'
         }
     }
 }
