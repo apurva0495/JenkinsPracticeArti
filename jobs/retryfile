@@ -1,15 +1,14 @@
 pipeline {
     agent any
+    environment {
+        NAME = 'AA'
+        LASTNAME = 'AG'
+    }
+
     stages {
         stage('Build') {
             steps {
-                retry(3) {  // Retries the step up to 3 times if it fails
-                    bat 'echo hello'
-                }
-
-                timeout(time: 3, unit: 'SECONDS') {
-                    bat 'powershell -command "Start-Sleep -Seconds 5"'
-                }
+                bat 'echo %NAME% %LASTNAME%'
             }
         }
     }
