@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+        maven 'maven'  // Must match the configured Maven name
+    }
     stages {
         stage('Compile') {
             steps {
@@ -12,7 +15,7 @@ pipeline {
         stage('Test') {
             steps {
                 withMaven(maven: 'maven') {
-                    catchError(buildResult: 'UNSTABLE') {  // Continue even if tests fail
+                    catchError(buildResult: 'UNSTABLE') {
                         bat 'mvn test'
                     }
                 }
