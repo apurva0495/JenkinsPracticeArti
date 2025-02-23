@@ -5,28 +5,20 @@ pipeline {
     }
     stages {
         stage('Compile') {
-            steps {
-                withMaven(maven: 'maven') {
+            steps {            
                     bat 'mvn clean compile'
-                }
             }
         }
 
         stage('Test') {
             steps {
-                withMaven(maven: 'maven') {
-                    catchError(buildResult: 'UNSTABLE') {
-                        bat 'mvn test'
-                    }
-                }
+                    bat 'mvn test'
             }
         }
 
         stage('Deploy') {
-            steps {
-                withMaven(maven: 'maven') {
+            steps {               
                     bat 'mvn deploy'
-                }
             }
         }
     }
@@ -36,13 +28,11 @@ pipeline {
             echo 'Pipeline execution completed!'
         }
         success {
-            echo 'Build was successful 🎉'
+            echo 'Build was successful'
         }
         failure {
-            echo 'Build failed ❌'
+            echo 'Build failed'
         }
-        unstable {
-            echo 'Some tests failed, but continuing... ⚠️'
-        }
+        
     }
 }
