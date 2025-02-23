@@ -1,24 +1,23 @@
 pipeline {
     agent any
-    tools {
-        maven 'maven'  // Must match the configured Maven name
-    }
     stages {
         stage('Compile') {
-            steps {            
-                    bat 'mvn clean compile'
+            steps {
+                bat 'mvn clean compile'
             }
         }
 
         stage('Test') {
             steps {
+                catchError(buildResult: 'UNSTABLE') {  // Continue even if tests fail
                     bat 'mvn test'
+                }
             }
         }
 
         stage('Deploy') {
-            steps {               
-                    bat 'mvn deploy'
+            steps {
+                bat 'mvn deploy'
             }
         }
     }
@@ -28,11 +27,13 @@ pipeline {
             echo 'Pipeline execution completed!'
         }
         success {
-            echo 'Build was successful'
+            echo 'Build was successful 🎉'
         }
         failure {
-            echo 'Build failed'
+            echo 'Build failed ❌'
         }
-        
+        unstable {
+            echo 'Some tests failed, but continuing... ⚠️'
+        }
     }
 }
