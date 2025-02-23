@@ -7,8 +7,8 @@ pipeline {
                     bat 'echo hello'
                 }
 
-                timeout(time: 3, unit: 'SECONDS'){
-                    bat 'sleep 5'
+                timeout(time: 3, unit: 'SECONDS') {
+                    bat 'powershell -command "Start-Sleep -Seconds 5"'
                 }
             }
         }
