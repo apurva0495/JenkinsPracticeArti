@@ -1,0 +1,12 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                retry(3) {  // Retries the step up to 3 times if it fails
+                    bat "Retrying command"
+                }
+            }
+        }
+    }
+}
