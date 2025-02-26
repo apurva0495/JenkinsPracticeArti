@@ -1,14 +1,12 @@
 pipeline{
     agent any
     stages{
-       stage('build'){
+       stage('Build'){
                 retry(3){
-                    bat 'echo "hello world"'
+                    bat  'I am not going to work :c'
                 }
         }
 
     }
-
-
-
 }
+
