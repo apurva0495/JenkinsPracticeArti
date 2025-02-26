@@ -1,15 +1,15 @@
 pipeline {
     agent any
-    environment{
-      NAME='AA'
-      LASTNAME='SS'
-
+    environment {
+        NAME = 'AA'
+        LASTNAME = 'AG'
     }
 
-    stages{
-        stage('build'){
+    stages {
+        stage('Build') {
+            steps {
                 bat 'echo %NAME% %LASTNAME%'
             }
-
+        }
     }
 }
