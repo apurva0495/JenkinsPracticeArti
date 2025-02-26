@@ -1,12 +1,15 @@
 pipeline {
     agent any
-    stages {
-        stage('Build') {
-            steps {
-                retry(3) {  // Retries this step up to 3 times if it fails
-                    bat 'echo "I am not going to work :c"'
-                }
+    environment{
+      NAME='AA'
+      LASTNAME='SS'
+
+    }
+
+    stages{
+        stage('build'){
+                bat 'echo %NAME% %LASTNAME%'
             }
-        }
+
     }
 }
