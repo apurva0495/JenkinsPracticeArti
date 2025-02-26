@@ -4,7 +4,7 @@ pipeline {
     parameters{
         string(name:'Env',defaultValue:'QA',description:'this is desc')
         choice(name:'Envs',choices:['QA','UAT'],description:'this is desc')
-        boolean(name:'Bools',defaultValue:true,description:'this is bool')
+        booleanParam(name:'Bools',defaultValue:true,description:'this is bool')
     }
     stages{
         stage('Compile'){    
