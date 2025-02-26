@@ -1,16 +1,22 @@
 pipeline {
     agent any
-    environment {
-        NAME = 'AA'
-        LASTNAME = 'AG'
-    }
-
-    stages {
-        stage('Build') {
-            steps {
-                bat 'echo %NAME% %LASTNAME%'
+    stages{
+        stage('Compile'){    
+            steps{
+                withMaven(mavem:'maven'){
+                  bat 'mvn clean compile'
+                }
             }
         }
+
+        stage('Test'){    
+            steps{
+                withMaven(mavem:'maven'){
+                  bat 'mvn test'
+                }
+            }
+        }
+
     }
     post{
         always{
