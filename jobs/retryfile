@@ -3,8 +3,8 @@ pipeline {
 
     parameters{
         string(name:'Env',defaultValue:'QA',description:'this is desc')
-        choice(name:'Env',choices:['QA','UAT'],description:'this is desc')
-        boolean(name:'Bool',defaultValue=true,description:'this is bool')
+        choice(name:'Envs',choices:['QA','UAT'],description:'this is desc')
+        boolean(name:'Bools',defaultValue:true,description:'this is bool')
     }
     stages{
         stage('Compile'){    
