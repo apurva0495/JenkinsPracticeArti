@@ -1,39 +1,14 @@
-pipeline {
+pipeline{
     agent any
-    stages {
-        stage('Compile') {
-            steps {
-                withMaven(maven: 'maven') {
-                    bat 'mvn clean compile'
+    stages{
+       stage('build'){
+                retry(3){
+                    bat 'echo "hello world"'
                 }
-            }
         }
 
-        stage('Test') {
-            steps {
-                withMaven(maven: 'maven') {
-                    catchError(buildResult: 'UNSTABLE') {  // Continue even if tests fail
-                        bat 'mvn test'
-                    }
-                }
-            }
-        }
+    }
 
-       
-    }
-    
-    post {
-        always {
-            echo 'Pipeline execution completed!'
-        }
-        success {
-            echo 'Build was successful 🎉'
-        }
-        failure {
-            echo 'Build failed ❌'
-        }
-        unstable {
-            echo 'Some tests failed, but continuing... ⚠️'
-        }
-    }
+
+
 }
