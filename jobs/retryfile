@@ -1,12 +1,12 @@
-pipeline{
+pipeline {
     agent any
-    stages{
-       stage('Build'){
-                retry(3){
-                    bat  'I am not going to work :c'
+    stages {
+        stage('Build') {
+            steps {
+                retry(3) {  // Retries this step up to 3 times if it fails
+                    bat 'echo "I am not going to work :c"'
                 }
+            }
         }
-
     }
 }
-
