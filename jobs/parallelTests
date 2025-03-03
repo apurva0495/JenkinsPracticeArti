@@ -8,13 +8,10 @@ pipeline{
 			}
 		}
 		stage('Test Execution'){
-			parallel{
-			     stage('Run Tests'){
-					steps{
-						bat 'mvn test'
-					}
-				}	
+			steps{
+				bat 'mvn test'
 			}
+				
 		}
 
 
