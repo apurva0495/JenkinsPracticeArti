@@ -1,8 +1,23 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="JenkinsTest">
+<suite name="JenkinsTest" parallel="tests" thread-count="5" >
 	<test name="Test One">
 		<classes>
 			<class name="Testing.RandomTest"></class>
+		</classes>
+	</test>
+	<test name="Test Two">
+		<classes>
+			<class name="Testing.RandomTest2"></class>
+		</classes>
+	</test>
+	<test name="Test Three">
+		<classes>
+			<class name="Testing.RandomTest3"></class>
+		</classes>
+	</test>
+	<test name="Test Four">
+		<classes>
+			<class name="Testing.RandomTest4"></class>
 		</classes>
 	</test>
 </suite>
