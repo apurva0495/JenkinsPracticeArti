@@ -1,17 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-02-20T21:52:10 IST" name="JenkinsTest" finished-at="2025-02-20T21:52:10 IST" duration-ms="46">
+  <suite started-at="2025-03-03T19:48:20 IST" name="JenkinsTest" finished-at="2025-03-03T19:48:30 IST" duration-ms="10246">
     <groups>
     </groups>
-    <test started-at="2025-02-20T21:52:10 IST" name="Test One" finished-at="2025-02-20T21:52:10 IST" duration-ms="46">
+    <test started-at="2025-03-03T19:48:20 IST" name="Test One" finished-at="2025-03-03T19:48:26 IST" duration-ms="6271">
       <class name="Testing.RandomTest">
-        <test-method signature="testOne()[pri:0, instance:Testing.RandomTest@41e1e210]" started-at="2025-02-20T21:52:10 IST" name="testOne" finished-at="2025-02-20T21:52:10 IST" duration-ms="9" status="PASS">
+        <test-method signature="chromeB(java.lang.String)[pri:0, instance:Testing.RandomTest@3e11f9e9]" started-at="2025-03-03T19:48:20 IST" name="chromeB" finished-at="2025-03-03T19:48:26 IST" duration-ms="6215" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testOne -->
+        </test-method> <!-- chromeB -->
       </class> <!-- Testing.RandomTest -->
     </test> <!-- Test One -->
+    <test started-at="2025-03-03T19:48:20 IST" name="Test Two" finished-at="2025-03-03T19:48:30 IST" duration-ms="10246">
+      <class name="Testing.RandomTest">
+        <test-method signature="chromeB(java.lang.String)[pri:0, instance:Testing.RandomTest@63376bed]" started-at="2025-03-03T19:48:20 IST" name="chromeB" finished-at="2025-03-03T19:48:30 IST" duration-ms="10194" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- chromeB -->
+      </class> <!-- Testing.RandomTest -->
+    </test> <!-- Test Two -->
   </suite> <!-- JenkinsTest -->
 </testng-results>
