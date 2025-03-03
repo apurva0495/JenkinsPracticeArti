@@ -8,6 +8,5 @@ public class RandomTest {
 	@Test
 	public void testOne() {
 		System.out.println("Test One");
-		
 	}
 }

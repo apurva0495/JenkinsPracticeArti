@@ -1,12 +1,47 @@
 pipeline {
     agent any
-    stages {
-        stage('Build') {
-            steps {
-                retry(3) {  // Retries the step up to 3 times if it fails
-                    bat "Retrying command"
+
+    parameters{
+        string(name:'Env',defaultValue:'QA',description:'this is desc')
+        choice(name:'Envs',choices:['QA','UAT'],description:'this is desc')
+        booleanParam(name:'Bools',defaultValue:true,description:'this is bool')
+    }
+    stages{
+        stage('Compile'){    
+            steps{
+                withMaven(maven:'maven'){
+                  bat 'mvn clean compile'
                 }
             }
         }
+
+        stage('Test'){    
+            steps{
+                withMaven(maven:'maven'){
+                  bat 'mvn test'
+                }
+            }
+        }
+         stage('Archive Artifacts') {
+            steps {
+                archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+            }
+        }
+
     }
+    post{
+        always{
+            echo 'I will always execute'
+        }
+        success{
+            echo 'I will execute if i am passed'
+        }
+
+       failure{
+            echo 'I will execute if i am failed'
+        }
+
+
+
+        }
 }
