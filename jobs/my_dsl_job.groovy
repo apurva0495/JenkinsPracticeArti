@@ -1,4 +1,4 @@
-job('MyGeneratedJob') {
+job('MyGeneratedJob Second') {
     description('This job is generated via Job DSL from GitHub')
 
     scm {
